@@ -6,7 +6,7 @@ comments: true
 
 order: 5
 ---
-Hey! This is n00p.
+Hey! This is {{site.username}}
 
 - [GitHub](https://github.com/n00pme)
 
