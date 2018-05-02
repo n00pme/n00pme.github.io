@@ -1,11 +1,99 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>n00p.me</title>
-	<meta charset="utf-8">
-</head>
-<body>
-	<h2>Under Constuction.</h2> 
-	<h2>Redirecting to <a href="https://www.cnblogs.com/n00p">www.cnblogs.com/n00p</h2></a>
-</body>
-</html>
+---
+layout: default
+---
+
+<!-- jumbotron start -->
+<div class="container">
+	<div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+		<div class="col-md-6 px-0">
+			<h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+			<p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
+			<p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+		</div>
+	</div>
+</div> <!-- jumbotron end -->
+
+<!-- posts start -->
+<main role="main" class="container">
+	<div class="row">
+		<div class="col-md-8 blog-main">
+			<h3 class="pb-3 mb-4 font-italic border-bottom">
+				From the Timeline
+			</h3>
+
+			{% for post in paginator.posts %}
+
+			<div class="blog-post">
+				<h2 class="blog-post-title"><a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></h2>
+				<p class="blog-post-meta">
+					<span class="post-date">
+						{{ post.date | date: "%Y-%m-%d" | upcase }}
+					</span>
+
+					<span class="post-author">
+						by {{site.author}}
+					</span>
+
+					<span class="post-tags">
+						{% if post.tags.size > 0 %}
+
+						{% for cat in post.tags %}
+						<a class="post-cat" href="/tags/#{{ cat }}">{{ cat }}</a>
+						{% unless forloop.last %}
+						<span>/</span>
+						{% endunless %}
+						{% endfor %}
+						{% endif %}
+					</span>
+				</p>
+
+				<div class="excerpt">
+					{{ post.content | strip_html  | truncate: 400 }}	
+				</div>
+
+				<a class="btn-border-small continue-read" href={{ post.url }}>Continue reading...</a>
+			</div>
+
+			{% endfor %}
+
+
+			<!-- Pagination links start-->
+			<div class="blog-pagination">
+				{% if paginator.previous_page %}
+				<a href="{{ paginator.previous_page_path }}" class="btn btn-outline-primary previous">Previous</a>
+				{% else %}
+				<span class="btn btn-outline-secondary previous" diabled>Previous</span>
+				{% endif %}
+				<span class="page_number ">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+				{% if paginator.next_page %}
+				<a href="{{ paginator.next_page_path }}" class="btn btn-outline-primary next">Next</a>
+				{% else %}
+				<span class="btn btn-outline-secondary next" diabled>Next</span>
+				{% endif %}
+			</div> <!-- Pagination links end-->
+
+		</div><!-- /.blog-main -->
+
+
+		{% include aside.html %}
+	</div><!-- /.row -->
+
+</main> <!-- posts end -->
+
+<!-- remove escerpt blank lines start-->
+<script type="text/javascript">
+	var list = document.getElementsByClassName("excerpt");
+	var i;
+	for (i = 0; i < list.length; i++) {
+		list[i].innerHTML = list[i].innerHTML.split('\n').map(function(v) {
+			return v.trim()
+		}).filter(function(v) {
+			return v != '';
+		}).join('\n')
+	}
+</script> <!-- remove escerpt blank lines end-->
+
+
+
+
+
