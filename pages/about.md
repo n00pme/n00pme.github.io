@@ -1,14 +1,19 @@
 ---
 permalink: "/about/"
 title: "About"
-description: "Hey, this is n00p"
+description: "Hey, this is kyshel"
 comments: true
 
 order: 5
 ---
-Hey! This is {{site.username}}
+Hey! This is kyshel.
 
-- [GitHub](https://github.com/n00pme)
+An idealist & A ruler.
+
+You can find me at:
+
+- [GitHub](https://github.com/kyshel)
+- [Stackoverflow](https://stackoverflow.com/users/5944456/kyshel)
 
 
 

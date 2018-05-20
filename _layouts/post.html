@@ -21,6 +21,16 @@ layout: default
 						{% endfor %}
 						{% endif %}
 					</span>
+
+					{% if site.github_username %}
+
+
+					<span class="blog-post-edit">
+						<a href="{{ site.repo_url }}/edit/{{ site.branch }}/{{ page.path }}" title="Help improve article {{ page.path }}">Edit</a>
+					</span>
+					{% endif %}
+
+
 				</p>
 
 				<div class="content markdown-body">
