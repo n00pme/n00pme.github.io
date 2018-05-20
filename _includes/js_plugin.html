@@ -48,7 +48,31 @@
 </script>
 
 
+
+
 <!-- comment -->
 
 <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
+<script type="text/javascript">
+	
+	const gitment = new Gitment({
+  id: 'Your page ID', // optional
+  owner: 'Your GitHub ID',
+  repo: 'The repo to store comments',
+  oauth: {
+    client_id: 'Your client ID',
+    client_secret: 'Your client secret',
+  },
+  // ...
+  // For more available options, check out the documentation below
+})
+
+gitment.render('comments')
+// or
+// gitment.render(document.getElementById('comments'))
+// or
+// document.body.appendChild(gitment.render())
+
+</script>
