@@ -47,32 +47,3 @@
     });
 </script>
 
-
-
-
-<!-- comment -->
-<div id='comments'></div> 
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-
-<script type="text/javascript">
-	
-	const gitment = new Gitment({
-
-  owner: 'n00pme',
-  repo: 'n00pme.github.io',
-  oauth: {
-    client_id: '0e060b81340ea5305377',
-    client_secret: '38ff8a80a7df8ce635da3c10df61ba4419693a17',
-  },
-  // ...
-  // For more available options, check out the documentation below
-})
-
-gitment.render('comments')
-// or
-// gitment.render(document.getElementById('comments'))
-// or
-// document.body.appendChild(gitment.render())
-
-</script>
