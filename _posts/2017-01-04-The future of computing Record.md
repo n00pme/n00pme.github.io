@@ -50,7 +50,7 @@ Lua |Roberto Ierusalimschy |巴西
 ## 云计算时代
 
 进程间通信
-- Process: Running Program, Unique between others, No state save or thransfer, no share memory space
+- Process: Running Program, Unique between others, No state save or transfer, no share memory space
 - Thread: Multi threads can running in one process, they can cooperate, share memory space
 
 Unix-Like ways to communicate:

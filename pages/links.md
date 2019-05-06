@@ -9,7 +9,7 @@ order: 3
 ### Projects
 
 - [kyshel.me/config](http://kyshel.me/config)    
-  Commands for instant depoly.
+  Commands for instant deploy.
 - [kyshel.me/ahk](http://kyshel.me/ahk)    
   Scripts with HUGE productivity.
 
